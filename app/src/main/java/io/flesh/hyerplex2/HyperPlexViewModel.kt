@@ -12,7 +12,7 @@ import kotlin.random.Random
 class HyperPlexViewModel : ViewModel() {
 
     // all the letters a -> z and A -> Z
-    private val letters = ('a'..'z') + ('A'..'Z').toList()
+    private val letters = ('!'..'@') + ('{'..'~') + ('a'..'z') + ('A'..'Z').toList()
 
     // initial text
     private val initial = "This is HyperPlex"
@@ -72,7 +72,7 @@ class HyperPlexViewModel : ViewModel() {
     }.joinToString("")
 
     // Decode the string
-    private fun decode(iterations : Int): String =
+    private fun decode(iterations: Int): String =
         List(initial.toList().size) { index ->
             when {
                 index <= iterations || initial[index] == ' ' -> {
@@ -90,7 +90,7 @@ class HyperPlexViewModel : ViewModel() {
 
     // When the user clickes it.
     fun interactWithHyperPlex() {
-        if (decoded){
+        if (decoded) {
             jumble()
             return
         }
