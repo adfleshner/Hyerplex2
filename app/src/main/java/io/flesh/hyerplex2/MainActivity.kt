@@ -1,6 +1,7 @@
 package io.flesh.hyerplex2
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.flowWithLifecycle
@@ -24,6 +25,11 @@ class MainActivity : AppCompatActivity() {
         }
         binding.tvHyerplex.setOnClickListener {
             viewModel.interactWithHyperPlex()
+        }
+
+        binding.tvHyerplex2.setHyperPlexText("As a custom view")
+        binding.tvHyerplex2.setOnClickListener {
+            Toast.makeText(this, "Decode", Toast.LENGTH_SHORT).show()
         }
     }
 
