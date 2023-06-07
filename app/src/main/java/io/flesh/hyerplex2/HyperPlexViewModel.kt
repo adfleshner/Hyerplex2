@@ -66,7 +66,7 @@ class HyperPlexViewModel : ViewModel() {
             }
 
             else -> {
-                letters[Random.nextInt(letters.size)].toString()
+                getRandomLetter()
             }
         }
     }.joinToString("")
@@ -80,10 +80,13 @@ class HyperPlexViewModel : ViewModel() {
                 }
 
                 else -> {
-                    letters[Random.nextInt(letters.size)].toString()
+                    getRandomLetter()
                 }
             }
         }.joinToString("")
+
+    private fun getRandomLetter() = letters[Random.nextInt(letters.size)]
+
 
     // When the user clickes it.
     fun interactWithHyperPlex() {
