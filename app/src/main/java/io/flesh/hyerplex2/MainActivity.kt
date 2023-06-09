@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 class MainActivity : AppCompatActivity() {
 
     private val binding: ActivityMainBinding by lazy { ActivityMainBinding.inflate(layoutInflater) }
-    private val viewModel : HyperPlexViewModel by viewModels()
+    private val viewModel: HyperPlexViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,7 +32,4 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Decode", Toast.LENGTH_SHORT).show()
         }
     }
-
 }
-
-

@@ -2,7 +2,6 @@ package io.flesh.hyerplex2
 
 import androidx.lifecycle.ViewModel
 
-
 class HyperPlexViewModel : ViewModel() {
 
     private val hyperPlexer = HyperPlexer()
@@ -15,5 +14,4 @@ class HyperPlexViewModel : ViewModel() {
     }
 
     fun interactWithHyperPlex() = hyperPlexer.interactWithHyperPlex()
-
 }

@@ -13,8 +13,8 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 
-
-class HyperPlexTextView(context: Context, attrs: AttributeSet) : AppCompatTextView(context, attrs),
+class HyperPlexTextView(context: Context, attrs: AttributeSet) :
+    AppCompatTextView(context, attrs),
     LifecycleOwner {
 
     private val viewScope = CoroutineScope(SupervisorJob() + Dispatchers.Main)
@@ -66,6 +66,4 @@ class HyperPlexTextView(context: Context, attrs: AttributeSet) : AppCompatTextVi
 
     override val lifecycle: Lifecycle
         get() = lifecycleRegistry
-
 }
-

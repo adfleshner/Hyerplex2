@@ -27,8 +27,6 @@ class HyperPlexer {
 
     private val handler = Handler(Looper.getMainLooper())
 
-
-
     // Decode Letter by letter
     private var decodeRunnable: Runnable = object : Runnable {
         override fun run() {
@@ -47,7 +45,6 @@ class HyperPlexer {
     // TODO Randomize it back letter by letter
     private lateinit var encodeRunnable: Runnable
     private var iterations = 0.0
-
 
     // Updates the
     fun jumble() {
@@ -85,7 +82,6 @@ class HyperPlexer {
         }.joinToString("")
 
     private fun getRandomLetter() = letters[Random.nextInt(letters.size)]
-
 
     // When the user clickes it.
     fun interactWithHyperPlex() {
