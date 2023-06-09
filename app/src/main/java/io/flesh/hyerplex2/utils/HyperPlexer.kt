@@ -1,4 +1,4 @@
-package io.flesh.hyerplex2
+package io.flesh.hyerplex2.utils
 
 import android.os.Handler
 import android.os.Looper
@@ -9,10 +9,16 @@ import kotlin.math.roundToInt
 import kotlin.random.Random
 
 class HyperPlexer {
-    private val letters = ('!'..'@') + ('{'..'~') + ('a'..'z') + ('A'..'Z').toList()
+
+    private val validAscii = CONSTANTS.validHyperPlexerAscii
 
     // initial text
-    var initial = ""
+    private var initial = ""
+
+    // only make the setter public.
+    fun setInitial(initialText: String) {
+        this.initial = initialText
+    }
 
     private val internalMessage = MutableStateFlow(initial)
     val message = internalMessage.asStateFlow()
@@ -81,7 +87,7 @@ class HyperPlexer {
             }
         }.joinToString("")
 
-    private fun getRandomLetter() = letters[Random.nextInt(letters.size)]
+    private fun getRandomLetter() = validAscii[Random.nextInt(validAscii.size)]
 
     // When the user clickes it.
     fun interactWithHyperPlex() {

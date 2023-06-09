@@ -1,4 +1,4 @@
-package io.flesh.hyerplex2
+package io.flesh.hyerplex2.view
 
 import android.content.Context
 import android.util.AttributeSet
@@ -7,6 +7,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.LifecycleRegistry
 import androidx.lifecycle.flowWithLifecycle
+import io.flesh.hyerplex2.utils.HyperPlexer
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.SupervisorJob
@@ -47,7 +48,7 @@ class HyperPlexTextView(context: Context, attrs: AttributeSet) :
     }
 
     fun setHyperPlexText(initialText: String) {
-        hyperPlexer.initial = initialText
+        hyperPlexer.setInitial(initialText)
         hyperPlexer.jumble()
     }
 
